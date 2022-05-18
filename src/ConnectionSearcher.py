@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import os.path
 import json
 import sys
 import glob
@@ -9,7 +10,12 @@ import plistlib
 from workflow import Workflow3, ICON_WARNING, MATCH_SUBSTRING
 
 def read_connections():
-    pl = plistlib.readPlist(os.environ["HOME"] + "/Library/Application Support/com.tinyapp.TablePlus/Data/Connections.plist")
+
+    configPath = os.environ["HOME"] + "/Library/Application Support/com.tinyapp.TablePlus/Data/Connections.plist"
+    if not os.path.exists(configPath):
+        configPath = os.environ["HOME"] + "/Library/Application Support/com.tinyapp.TablePlus-setapp/Data/Connections.plist"
+
+    pl = plistlib.readPlist(configPath)
     connections = []
     i = 0
     while i < len(pl):

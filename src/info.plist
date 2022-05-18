@@ -104,7 +104,7 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Open a saved connection specified in Jump Desktop.</string>
+	<string>Open a saved connection specified in Table Plus</string>
 	<key>uidata</key>
 	<dict>
 		<key>3DE6F975-80E7-4468-8C97-6DF437B43F1E</key>
@@ -125,7 +125,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
