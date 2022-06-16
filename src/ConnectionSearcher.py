@@ -14,8 +14,10 @@ def read_connections():
     configPath = os.environ["HOME"] + "/Library/Application Support/com.tinyapp.TablePlus/Data/Connections.plist"
     if not os.path.exists(configPath):
         configPath = os.environ["HOME"] + "/Library/Application Support/com.tinyapp.TablePlus-setapp/Data/Connections.plist"
+          
+    with open(configPath, 'rb') as f:
+        pl = plistlib.load(f)
 
-    pl = plistlib.readPlist(configPath)
     connections = []
     i = 0
     while i < len(pl):
